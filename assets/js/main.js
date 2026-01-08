@@ -59,3 +59,29 @@ sr.reveal(".home__img, .about__subtitle, .about__text, .skills__img", {
 });
 sr.reveal(".home__social-icon", { interval: 200 });
 sr.reveal(".skills__data, .work__img, .contact__input", { interval: 200 });
+
+/* ================= 3D TILT EFFECT ================= */
+
+const tiltElements = document.querySelectorAll(
+  ".edu-card, .intern-card, .work__img, .skills__data"
+);
+
+tiltElements.forEach((el) => {
+  el.addEventListener("mousemove", (e) => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = -(y - centerY) / 15;
+    const rotateY = (x - centerX) / 15;
+
+    el.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+  });
+
+  el.addEventListener("mouseleave", () => {
+    el.style.transform = "rotateX(0) rotateY(0)";
+  });
+});
