@@ -21,7 +21,7 @@
 
     <!-- HEADER -->
     <header class="l-header">
-      <nav class="nav bd-grid">
+      <nav class="nav container">
         <a href="#" class="nav__logo">Gaurav</a>
 
         <div class="nav__menu" id="nav-menu">
@@ -62,30 +62,32 @@
       </nav>
     </header>
 
-    <!-- MAIN -->
     <main class="l-main">
       <!-- HOME -->
       <section class="home section" id="home">
-        <div class="home__img">
-          <img
-            src="assets/img/WhatsApp Image 2025-08-16 at 10.56.53 AM.jpg"
-            alt="Gaurav Ghosh"
-          />
+        <div class="home__container container">
+          <div class="home__img">
+            <img
+              src="assets/img/WhatsApp Image 2025-08-16 at 10.56.53 AM.jpg"
+              alt="Gaurav Ghosh"
+            />
+          </div>
+
+          <div class="home__data">
+            <h1 class="home__title">
+              Hi,<br />
+              I’m <span class="home__title-color">Gaurav Ghosh</span><br />
+              Full Stack MERN Developer & DSA Enthusiast
+            </h1>
+            <a href="#contact" class="button">Contact</a>
+          </div>
         </div>
-        <div class="home__data">
-          <h1 class="home__title">
-            Hi,<br />I’m <span class="home__title-color">Gaurav Ghosh</span
-            ><br />
-            Full Stack MERN Developer & DSA Enthusiast
-          </h1>
-        </div>
-        <a href="#contact" class="button">Contact</a>
       </section>
 
       <!-- ABOUT -->
       <section class="about section" id="about">
         <h2 class="section-title">About</h2>
-        <div class="about__container bd-grid">
+        <div class="about__container container">
           <div class="about__img">
             <img
               src="assets/img/WhatsApp Image 2025-08-16 at 10.55.45 AM.jpg"
@@ -112,17 +114,19 @@
       <!-- EDUCATION -->
       <section class="education section" id="education">
         <h2 class="section-title">Education</h2>
-        <div class="bd-grid">
+        <div class="education__container container">
           <div class="edu-card">
             <h3>B.Tech – Computer Science & Engineering (AI & ML)</h3>
             <p><strong>Techno India University</strong></p>
             <p>2023 – 2027</p>
           </div>
+
           <div class="edu-card">
             <h3>Higher Secondary (Class 12)</h3>
             <p><strong>Your School Name</strong></p>
             <p>2021 – 2023</p>
           </div>
+
           <div class="edu-card">
             <h3>Secondary (Class 10)</h3>
             <p><strong>Your School Name</strong></p>
@@ -134,13 +138,14 @@
       <!-- SKILLS -->
       <section class="skills section" id="skills">
         <h2 class="section-title">Skills</h2>
-        <div class="skills__container bd-grid">
+        <div class="skills__container container">
           <div>
             <h2 class="skills__subtitle">Professional Skills</h2>
             <p class="skills__text">
               HTML, CSS, JavaScript, MERN Stack, Data Structures & Algorithms,
               AI/ML fundamentals.
             </p>
+
             <div class="skills__data"><span>HTML</span><span>95%</span></div>
             <div class="skills__data"><span>CSS</span><span>85%</span></div>
             <div class="skills__data">
@@ -151,14 +156,17 @@
             </div>
             <div class="skills__data"><span>DSA</span><span>80%</span></div>
           </div>
-          <div><img src="assets/img/work3.jpg" class="skills__img" /></div>
+
+          <div class="skills__img-wrapper">
+            <img src="assets/img/work3.jpg" class="skills__img" />
+          </div>
         </div>
       </section>
 
       <!-- CERTIFICATIONS -->
       <section class="certifications section" id="certifications">
         <h2 class="section-title">Certifications</h2>
-        <div class="bd-grid">
+        <div class="container">
           <ul class="cert-list">
             <li>TCS iON – Professional Certification</li>
             <li>TechnoBillion AI – Python for Data Science</li>
@@ -171,7 +179,7 @@
       <!-- INTERNSHIP -->
       <section class="internship section" id="internship">
         <h2 class="section-title">Internship</h2>
-        <div class="bd-grid">
+        <div class="container">
           <div class="intern-card">
             <h3>Python for Data Science Intern</h3>
             <p><strong>Techno Billion AI (Virtual)</strong></p>
@@ -187,7 +195,7 @@
       <!-- PROJECTS -->
       <section class="work section" id="work">
         <h2 class="section-title">Projects</h2>
-        <div class="work__container bd-grid">
+        <div class="work__container container">
           <div class="work__img"><img src="assets/img/work1.jpg" /></div>
           <div class="work__img"><img src="assets/img/work2.jpg" /></div>
         </div>
@@ -196,7 +204,7 @@
       <!-- PARTICIPATION -->
       <section class="participation section" id="participation">
         <h2 class="section-title">Participation</h2>
-        <div class="bd-grid">
+        <div class="container">
           <ul class="activity-list">
             <li>Active LeetCode & HackerRank problem solver</li>
             <li>Built MERN & AI-based personal projects</li>
@@ -208,7 +216,7 @@
       <!-- CONTACT -->
       <section class="contact section" id="contact">
         <h2 class="section-title">Contact</h2>
-        <div class="contact__container bd-grid">
+        <div class="contact__container container">
           <form class="contact__form">
             <input type="text" placeholder="Name" class="contact__input" />
             <input type="email" placeholder="Email" class="contact__input" />
