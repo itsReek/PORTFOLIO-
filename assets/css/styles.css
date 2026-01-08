@@ -1,11 +1,23 @@
+/* ===================== RESET ===================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* ===================== GENERAL ===================== */
 body {
   font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   color: #0f172a;
   background-color: #f8fafc;
+  line-height: 1.6;
+}
+
+/* ===================== CONTAINER ===================== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 /* ===================== HEADER & NAV ===================== */
@@ -23,19 +35,24 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  height: 70px;
 }
 
 .nav__logo {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.2rem; /* FIXED: smaller */
   color: #0b1e42;
   text-decoration: none;
 }
 
 .nav__menu {
   display: flex;
+}
+
+.nav__list {
+  display: flex;
   gap: 1.5rem;
+  list-style: none;
 }
 
 .nav__link {
@@ -58,39 +75,68 @@ body {
 
 /* ===================== SECTIONS ===================== */
 .section {
-  padding: 100px 2rem 50px 2rem;
+  padding: 110px 0 60px;
 }
 
 .section-title {
   font-size: 2rem;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   color: #0b1e42;
 }
 
 /* ===================== HOME ===================== */
+.home__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  min-height: calc(100vh - 70px);
+}
+
+.home__img {
+  display: flex;
+  justify-content: center;
+}
+
 .home__img img {
-  width: 250px;
+  width: 260px;
   border-radius: 50%;
 }
 
 .home__data {
-  text-align: center;
-  margin-top: 20px;
+  text-align: left;
 }
 
 .home__title {
   font-size: 2rem;
+  line-height: 1.4;
 }
 
 .home__title-color {
   color: #2563eb;
 }
 
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #2563eb;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #1d4ed8;
+}
+
 /* ===================== ABOUT ===================== */
 .about__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
 }
@@ -100,7 +146,22 @@ body {
   border-radius: 10px;
 }
 
+.about__subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.about__text {
+  opacity: 0.9;
+}
+
 /* ===================== EDUCATION ===================== */
+.education__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
 .edu-card {
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
@@ -118,7 +179,7 @@ body {
 /* ===================== SKILLS ===================== */
 .skills__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
 }
@@ -139,12 +200,22 @@ body {
   box-shadow: 0 20px 45px rgba(37, 99, 235, 0.35);
 }
 
-/* ===================== CERTIFICATIONS & PARTICIPATION ===================== */
+.skills__img-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.skills__img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+/* ===================== LIST SECTIONS ===================== */
 .cert-list,
 .activity-list {
   list-style: disc;
   margin-left: 20px;
-  padding: 1rem;
+  padding: 1.5rem;
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
   border-radius: 8px;
@@ -152,6 +223,8 @@ body {
 
 /* ===================== INTERNSHIP ===================== */
 .intern-card {
+  max-width: 600px;
+  margin: 0 auto;
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -184,7 +257,14 @@ body {
 }
 
 /* ===================== CONTACT ===================== */
+.contact__container {
+  display: flex;
+  justify-content: center;
+}
+
 .contact__form {
+  width: 100%;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -220,13 +300,9 @@ body {
 }
 
 .footer__title {
-  font-size: 24px;
+  font-size: 22px;
   margin-bottom: 10px;
   font-weight: 600;
-}
-
-.footer__links {
-  margin: 15px 0;
 }
 
 .footer__links a {
@@ -266,7 +342,9 @@ body.dark-mode .section-title {
 body.dark-mode .edu-card,
 body.dark-mode .intern-card,
 body.dark-mode .work__img,
-body.dark-mode .skills__data {
+body.dark-mode .skills__data,
+body.dark-mode .cert-list,
+body.dark-mode .activity-list {
   background: rgba(15, 23, 42, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -293,4 +371,22 @@ body.dark-mode .footer {
   cursor: pointer;
   z-index: 999;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .home__container,
+  .about__container,
+  .skills__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .home__data {
+    text-align: center;
+  }
+
+  .nav__menu {
+    display: none;
+  }
 }
